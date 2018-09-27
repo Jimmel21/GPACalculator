@@ -12,23 +12,33 @@ namespace GPACalculator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+			
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Get grade point for each course (grade*credit)
-            double course1 = Convert.ToInt32(DropDownList1.SelectedValue) * Convert.ToDouble(DropDownList2.SelectedValue);
-            double course2 = Convert.ToInt32(DropDownList3.SelectedValue) * Convert.ToDouble(DropDownList4.SelectedValue);
-            double course3 = Convert.ToInt32(DropDownList5.SelectedValue) * Convert.ToDouble(DropDownList6.SelectedValue);
-            double course4 = Convert.ToInt32(DropDownList7.SelectedValue) * Convert.ToDouble(DropDownList8.SelectedValue);
-            double course5 = Convert.ToInt32(DropDownList9.SelectedValue) * Convert.ToDouble(DropDownList10.SelectedValue);
+            double course1 = Convert.ToInt32(DropDownList1.SelectedValue)
+                * Convert.ToDouble(DropDownList2.SelectedValue);
+            double course2 = Convert.ToInt32(DropDownList3.SelectedValue) *
+                Convert.ToDouble(DropDownList4.SelectedValue);
+            double course3 = Convert.ToInt32(DropDownList5.SelectedValue) *
+                Convert.ToDouble(DropDownList6.SelectedValue);
+            double course4 = Convert.ToInt32(DropDownList7.SelectedValue) * 
+                Convert.ToDouble(DropDownList8.SelectedValue);
+            double course5 = Convert.ToInt32(DropDownList9.SelectedValue) *
+                Convert.ToDouble(DropDownList10.SelectedValue);
 
             //Get total credits
-            double totalCredits = Convert.ToInt32(DropDownList1.SelectedValue) + Convert.ToInt32(DropDownList3.SelectedValue) + Convert.ToInt32(DropDownList5.SelectedValue) + Convert.ToInt32(DropDownList7.SelectedValue) + Convert.ToInt32(DropDownList9.SelectedValue);
+            double totalCredits = Convert.ToInt32(DropDownList1.SelectedValue) +
+                Convert.ToInt32(DropDownList3.SelectedValue) + 
+                Convert.ToInt32(DropDownList5.SelectedValue) + 
+                Convert.ToInt32(DropDownList7.SelectedValue) + 
+                Convert.ToInt32(DropDownList9.SelectedValue);
 
             //Get total grade points
-            double totalGradePoints = course1 + course2 + course3 + course4 + course5;
+            double totalGradePoints = course1 +
+                course2 + course3 + course4 + course5;
 
             //Get GPA
             double GPA = totalGradePoints / totalCredits;
@@ -48,13 +58,20 @@ namespace GPACalculator
             table.Rows.Add(TextBox3.Text, course3);
             table.Rows.Add(TextBox4.Text, course4);
             table.Rows.Add(TextBox5.Text, course5);
-            table.Rows.Add("TOTAL", GPA);
+            
 
             GridView1.Visible = true;
             GridView1.DataSource = table;
             GridView1.DataBind();
-          
 
+			Label1.Text = GPA.ToString();
+			//Chart1.Visible = true;
+			Chart1.DataSource = table;
+			Chart1.Series["Series1"].XValueMember = "Course";
+			Chart1.Series["Series1"].YValueMembers = "Grade Point";
+			Chart1.DataBind();
+
+			Panel1.Visible = true;
 
 
         }
