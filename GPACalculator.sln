@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPACalculator", "GPACalculator\GPACalculator.csproj", "{EDEDD955-68F7-42D3-B3B1-F906762199FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDEDD955-68F7-42D3-B3B1-F906762199FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEDD955-68F7-42D3-B3B1-F906762199FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEDD955-68F7-42D3-B3B1-F906762199FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEDD955-68F7-42D3-B3B1-F906762199FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3962395-ACDE-472E-A5D3-6BFF4F31A3BC}
+	EndGlobalSection
+EndGlobal
